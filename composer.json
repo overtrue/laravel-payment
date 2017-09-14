@@ -1,0 +1,43 @@
+{
+    "name": "overtrue/laravel-payment",
+    "description": "Omnipay ServiceProvider for Laravel.",
+    "type": "library",
+    "require": {
+        "laravel/framework": "5.5.*",
+        "php-http/guzzle6-adapter": "^1",
+        "omnipay/omnipay": "3.0.x@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.3",
+        "mockery/mockery": "^0.9.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Overtrue\\LaravelPayment\\":"./src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Overtrue\\LaravelPayment\\Tests\\": "./tests",
+            "Omnipay\\": "./tests/Omnipay"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "overtrue",
+            "email": "anzhengchao@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Overtrue\\LaravelPayment\\ServiceProvider"
+            ],
+            "alias": {
+                "Pay": "Overtrue\\LaravelPayment\\Pay"
+            }
+        }
+    },
+    "minimum-stability":"dev"
+}
