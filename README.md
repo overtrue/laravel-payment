@@ -12,6 +12,7 @@ After updated composer, if you are using laravel version < 5.5, you need to regi
 
 ```php
 // config/app.php
+
     'providers' => [
         //...
         Overtrue\LaravelPayment\ServiceProvider::class,
@@ -28,6 +29,7 @@ if you want to use facade mode, you can register a facade name what you want to 
 
 ```php
 // config/app.php
+
     'aliases' => [
         'LaravelPayment' => Overtrue\LaravelPayment\Facade::class, // This is default in laravel 5.5
     ],
@@ -37,6 +39,7 @@ if you want to use facade mode, you can register a facade name what you want to 
 
 ```php
 // config/payments.php
+
     // The default gateway name which configured in `gateways` section.
     'default_gateway' => 'paypal',
 
