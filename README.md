@@ -84,7 +84,7 @@ You need to install the gateway you want to use: [omnipay#payment-gateways](http
 Gateway instance:
 
 ```php
-LaravelPayment::gateway('GATEWAY NAME'); // GATEWAY NAME is configured is key of `gateways` configuration.
+LaravelPayment::gateway('GATEWAY NAME'); // GATEWAY NAME is key name of `gateways` configuration.
 LaravelPayment::gateway('alipay');
 LaravelPayment::gateway('paypal');
 ```
