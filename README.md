@@ -19,7 +19,7 @@ After updated composer, if you are using laravel version < 5.5, you need to regi
     ],
 ```
 
-And you need to publish the config file: 
+And publish the config file: 
 
 ```shell
 $ php artisan vendor:publish --provider=Overtrue\\LaravelPayment\\ServiceProvider
@@ -75,7 +75,27 @@ if you want to use facade mode, you can register a facade name what you want to 
     ],
 ```
 
+### install payment gateways
+
+You need to install the gateway you want to use: [omnipay#payment-gateways](https://github.com/thephpleague/omnipay#payment-gateways)
+
 ## Usage
+
+Gateway instance:
+
+```php
+LaravelPayment::gateway('GATEWAY NAME'); // GATEWAY NAME is configured is key of `gateways` configuration.
+LaravelPayment::gateway('alipay');
+LaravelPayment::gateway('paypal');
+```
+
+Using default gateway:
+
+```php
+LaravelPayment::purchase(...);
+```
+
+Example:
 
 ```php
 $formData = [
@@ -84,7 +104,8 @@ $formData = [
     'expiryYear' => '2030', 
     'cvv' => '123'
 ];
-$response = $gateway->purchase([
+
+$response = LaravelPayment::purchase([
     'amount' => '10.00', 
     'currency' => 'USD', 
     'card' => $formData,
@@ -102,7 +123,7 @@ if ($response->isRedirect()) {
 }
 ```
 
-
+For more use about [Omnipay](https://github.com/omnipay/omnipay), please refer to [Omnipay Official Home Page](http://omnipay.thephpleague.com/)
 
 ## License
 
