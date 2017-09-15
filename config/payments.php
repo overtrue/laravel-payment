@@ -41,5 +41,6 @@ return [
                 'test_mode' => env('PAYPAL_TEST_MODE'),
             ],
         ],
+        // other gateways
     ],
 ];

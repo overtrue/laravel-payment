@@ -35,7 +35,7 @@
                 "Overtrue\\LaravelPayment\\ServiceProvider"
             ],
             "alias": {
-                "Pay": "Overtrue\\LaravelPayment\\Pay"
+                "LaravelPayment": "Overtrue\\LaravelPayment\\Facade"
             }
         }
     },
