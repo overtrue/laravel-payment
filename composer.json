@@ -5,7 +5,7 @@
     "require": {
         "laravel/framework": "~5.0",
         "php-http/guzzle6-adapter": "^1",
-        "omnipay/omnipay": "3.0.x@dev"
+        "league/omnipay": "^3.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.3",
