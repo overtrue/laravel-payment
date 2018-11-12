@@ -56,7 +56,7 @@ class Factory
      * @param array                            $options
      * @param \Omnipay\Common\GatewayInterface $gateway
      */
-    protected static function applyDriverOptions(array $options, GatewayInterface $gateway): void
+    protected static function applyDriverOptions(array $options, GatewayInterface $gateway)
     {
         $gatewayMethods = get_class_methods($gateway);
 
