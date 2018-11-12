@@ -1,6 +1,12 @@
 # Laravel Payment
 
-:credit_card: [Omnipay](https://github.com/omnipay/omnipay) ServiceProvider for Laravel.
+:credit_card: [Omnipay](https://github.com/thephpleague/omnipay) ServiceProvider for Laravel.
+
+[![Build Status](https://travis-ci.org/overtrue/laravel-payment.svg?branch=master)](https://travis-ci.org/overtrue/laravel-payment)
+[![Latest Stable Version](https://poser.pugx.org/overtrue/laravel-payment/v/stable)](https://packagist.org/packages/overtrue/laravel-payment)
+[![Total Downloads](https://poser.pugx.org/overtrue/laravel-payment/downloads)](https://packagist.org/packages/overtrue/laravel-payment)
+[![License](https://poser.pugx.org/overtrue/laravel-payment/license)](https://packagist.org/packages/overtrue/laravel-payment)
+[![composer.lock](https://poser.pugx.org/overtrue/laravel-payment/composerlock)](https://packagist.org/packages/overtrue/laravel-payment)
 
 ## Installing
 
