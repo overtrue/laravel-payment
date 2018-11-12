@@ -3,6 +3,7 @@
     "description": "Omnipay ServiceProvider for Laravel.",
     "type": "library",
     "require": {
+        "php": ">=7.0",
         "laravel/framework": "~5.0",
         "php-http/guzzle6-adapter": "^1",
         "league/omnipay": "^3.0"
