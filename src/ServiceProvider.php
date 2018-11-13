@@ -28,7 +28,7 @@ class ServiceProvider extends LaravelServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/payments.php',
+            __DIR__.'/../config/payments.php' => config_path('payments.php'),
         ], 'config');
     }
 
