@@ -10,7 +10,7 @@
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9",
-        "phpunit/phpunit": "~6.5",
+        "phpunit/phpunit": "~6.5 || ~7.0",
         "overtrue/phplint": "dev-master"
     },
     "autoload": {
