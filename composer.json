@@ -9,7 +9,7 @@
         "league/omnipay": "^3.0"
     },
     "require-dev": {
-        "mockery/mockery": "^0.9.9",
+        "mockery/mockery": "^0.9.9 || ^1.0.0",
         "phpunit/phpunit": "~6.5 || ~7.0",
         "overtrue/phplint": "dev-master"
     },
