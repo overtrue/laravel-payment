@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "php": ">=7.0",
-        "laravel/framework": "~5.0",
+        "laravel/framework": "~5.0||~6.0",
         "php-http/guzzle6-adapter": "^1 || ^2",
         "league/omnipay": "^3.0"
     },
