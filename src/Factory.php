@@ -46,7 +46,7 @@ class Factory
         $formatted = [];
 
         foreach ($options as $key => $value) {
-            $formatted[camel_case($key)] = $value;
+            $formatted[\Str::camel($key)] = $value;
         }
 
         return $formatted;

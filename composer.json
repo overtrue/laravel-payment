@@ -36,7 +36,7 @@
             "providers": [
                 "Overtrue\\LaravelPayment\\ServiceProvider"
             ],
-            "alias": {
+            "aliases": {
                 "LaravelPayment": "Overtrue\\LaravelPayment\\Facade"
             }
         }
