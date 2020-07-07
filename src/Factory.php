@@ -13,6 +13,7 @@ namespace Overtrue\LaravelPayment;
 
 use Omnipay\Common\GatewayInterface;
 use Omnipay\Omnipay;
+use Illuminate\Support\Str;
 
 /**
  * Class Factory.
@@ -46,7 +47,7 @@ class Factory
         $formatted = [];
 
         foreach ($options as $key => $value) {
-            $formatted[\Str::camel($key)] = $value;
+            $formatted[Str::camel($key)] = $value;
         }
 
         return $formatted;
