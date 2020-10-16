@@ -4,13 +4,13 @@
     "type": "library",
     "require": {
         "php": ">=7.0",
-        "laravel/framework": "~5.0||~6.0||~7.0",
+        "laravel/framework": "~5.0||~6.0||~7.0 || ^8.0",
         "php-http/guzzle6-adapter": "^1 || ^2",
         "league/omnipay": "^3.0"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.9 || ^1.0.0",
-        "phpunit/phpunit": "~6.5 || ~7.0",
+        "phpunit/phpunit": "~6.5 || ^7.0 ",
         "overtrue/phplint": "dev-master"
     },
     "autoload": {
