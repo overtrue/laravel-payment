@@ -1,23 +1,10 @@
 <?php
 
-/*
- * This file is part of the overtrue/laravel-payment.
- *
- * (c) overtrue <i@overtrue.me>
- *
- * This source file is subject to the MIT license that is bundled
- * with this source code in the file LICENSE.
- */
-
 namespace Omnipay\LaravelPayment;
 
 use Omnipay\Common\AbstractGateway;
 
 /**
- * Class TestGateway.
- *
- * @author overtrue <i@overtrue.me>
- *
  * @method \Omnipay\Common\Message\RequestInterface authorize(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface completeAuthorize(array $options = [])
  * @method \Omnipay\Common\Message\RequestInterface capture(array $options = [])
