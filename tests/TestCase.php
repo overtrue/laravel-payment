@@ -7,7 +7,7 @@ class TestCase extends \PHPUnit\Framework\TestCase
     /**
      * Tear down the test case.
      */
-    public function tearDown()
+    public function tearDown(): void
     {
         parent::tearDown();
 

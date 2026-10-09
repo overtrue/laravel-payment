@@ -32,4 +32,27 @@ class FactoryTest extends TestCase
 
         $this->assertSame(['testMode' => true], $gateway->getParameters());
     }
+
+    public function testArrayOptionsExpandIntoSetterArguments(): void
+    {
+        $gateway = Factory::make('LaravelPayment_Test', [
+            'pair' => ['first', 'second'],
+            'settings' => [['nested' => true]],
+        ]);
+
+        $this->assertSame(['first', 'second'], $gateway->getParameters()['pair']);
+        $this->assertSame(['nested' => true], $gateway->getParameters()['settings']);
+    }
+
+    public function testUnknownOptionsAreIgnored(): void
+    {
+        $gateway = Factory::make('LaravelPayment_Test', ['unknown_option' => 'ignored']);
+        $this->assertSame([], $gateway->getParameters());
+    }
+
+    public function testInvalidDriverFails(): void
+    {
+        $this->expectException(\Omnipay\Common\Exception\RuntimeException::class);
+        Factory::make('LaravelPayment_DoesNotExist', []);
+    }
 }

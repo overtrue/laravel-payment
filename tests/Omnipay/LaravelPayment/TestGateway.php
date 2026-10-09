@@ -37,4 +37,19 @@ class TestGateway extends AbstractGateway
     {
         return $this->getParameter('username');
     }
+
+    public function setPair($first, $second)
+    {
+        return $this->setParameter('pair', [$first, $second]);
+    }
+
+    public function setSettings(array $settings)
+    {
+        return $this->setParameter('settings', $settings);
+    }
+
+    public function forwardArguments(...$arguments)
+    {
+        return $arguments;
+    }
 }

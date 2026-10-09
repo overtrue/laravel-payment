@@ -3,19 +3,20 @@
     "description": "Omnipay ServiceProvider for Laravel.",
     "type": "library",
     "require": {
-        "php": ">=7.0",
-        "laravel/framework": "~5.0||~6.0||~7.0 || ^8.0",
-        "php-http/guzzle7-adapter": "^0.1",
-        "league/omnipay": "^3.0"
+        "php": "^8.3",
+        "laravel/framework": "^13.30",
+        "php-http/guzzle7-adapter": "^1.1",
+        "league/omnipay": "^3.2.1",
+        "omnipay/common": "^3.5.1"
     },
     "require-dev": {
-        "mockery/mockery": "^0.9.9 || ^1.0.0",
-        "phpunit/phpunit": "~6.5 || ^7.0 ",
-        "overtrue/phplint": "dev-master"
+        "mockery/mockery": "^1.6",
+        "orchestra/testbench": "^11.0",
+        "phpunit/phpunit": "^12.5.8"
     },
     "autoload": {
         "psr-4": {
-            "Overtrue\\LaravelPayment\\":"./src"
+            "Overtrue\\LaravelPayment\\": "./src"
         }
     },
     "autoload-dev": {
@@ -38,6 +39,17 @@
             ],
             "aliases": {
                 "LaravelPayment": "Overtrue\\LaravelPayment\\Facade"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "find src tests config -name \"*.php\" -print0 | xargs -0 -n1 php -l"
+    },
+    "config": {
+        "policy": {
+            "abandoned": {
+                "block": true
             }
         }
     }
