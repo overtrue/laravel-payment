@@ -101,4 +101,36 @@ class ManagerTest extends TestCase
             'testMode' => true,
         ], $manager->getParameters());
     }
+
+    public function testDefaultOptionsPrecedenceAndIndependentGatewayCache(): void
+    {
+        $manager = new Manager([
+            'default_gateway' => 'first',
+            'default_options' => ['username' => 'default', 'test_mode' => true],
+            'gateways' => [
+                'first' => ['driver' => 'LaravelPayment_Test', 'options' => ['username' => 'override']],
+                'second' => ['driver' => 'LaravelPayment_Test'],
+            ],
+        ]);
+
+        $this->assertSame(['username' => 'override', 'test_mode' => true], $manager->getGatewayOptions('first'));
+        $this->assertSame('override', $manager->gateway()->getUsername());
+        $this->assertTrue($manager->gateway()->getTestMode());
+        $this->assertSame('default', $manager->gateway('second')->getUsername());
+        $this->assertNotSame($manager->gateway('first'), $manager->gateway('second'));
+        $this->assertSame($manager->gateway('first'), $manager->gateway(null));
+        $this->assertSame($manager->gateway('first'), $manager->gateway(''));
+        $this->assertSame($manager->gateway('second'), $manager->gateway('second'));
+    }
+
+    public function testDynamicCallsForwardEveryArgumentUnchanged(): void
+    {
+        $manager = new Manager([
+            'default_gateway' => 'dummy',
+            'gateways' => ['dummy' => ['driver' => 'LaravelPayment_Test']],
+        ]);
+
+        $this->assertSame([], $manager->forwardArguments());
+        $this->assertSame(['one', ['two' => 2], null, false], $manager->forwardArguments('one', ['two' => 2], null, false));
+    }
 }

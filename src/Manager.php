@@ -12,7 +12,6 @@
 namespace Overtrue\LaravelPayment;
 
 use Illuminate\Config\Repository;
-use Illuminate\Support\Collection;
 use Omnipay\Common\GatewayInterface;
 
 /**
@@ -23,7 +22,7 @@ use Omnipay\Common\GatewayInterface;
 class Manager
 {
     /**
-     * @var Collection
+     * @var Repository
      */
     protected $config;
 
@@ -47,7 +46,7 @@ class Manager
      *
      * @return \Omnipay\Common\GatewayInterface
      */
-    public function gateway(string $name = null): GatewayInterface
+    public function gateway(?string $name = null): GatewayInterface
     {
         if (empty($name)) {
             $name = $this->getDefaultGateway();
